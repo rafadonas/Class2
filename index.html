@@ -1,18 +1,223 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Luxury Cars - Dark Mode</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+            background-color: #1a1a1a;
+            color: #e0e0e0;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(90deg, #ff0000, #cc0000);
+            padding: 20px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 40px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #ffd700;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=2070') no-repeat center/cover;
+            color: white;
+            position: relative;
+            margin-top: 80px;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            padding: 12px 30px;
+            background-color: #ff0000;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .btn::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: width 0.4s ease, height 0.4s ease;
+        }
+
+        .btn:hover::after {
+            width: 200px;
+            height: 200px;
+        }
+
+        .btn:hover {
+            transform: scale(1.05);
+        }
+
+        /* Car Gallery */
+        .gallery {
+            max-width: 1200px;
+            margin: 60px auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 0 20px;
+        }
+
+        .car-item {
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .car-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .car-item:hover img {
+            transform: scale(1.1);
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(90deg, #ff0000, #cc0000);
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .gallery img {
+            animation: fadeIn 1s ease-in-out;
+        }
+    </style>
 </head>
 
 <body>
-    <a href="">Home</a>
-    <a href="">Contato</a>
-    <a href="">Serviços</a>
-    <a href="">Produtos</a>
-    <a href="">Quem Somos</a>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#gallery">Galeria</a></li>
+                <li><a href="#about">Sobre</a></li>
+                <li><a href="produtos.html">Quem Somos</a></li>
+                <li><a href="#contact">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Descubra o Luxo Sobre Rodas</h1>
+            <p>Os melhores carros de luxo para quem busca exclusividade e performance.</p>
+            <a href="#gallery" class="btn">Explore Agora</a>
+        </div>
+    </section>
+
+    <section class="gallery" id="gallery">
+        <div class="car-item">
+            <img src="https://images.unsplash.com/photo-1541348263662-e068662d82af?q=80&w=1974" alt="Carro de Luxo 1">
+        </div>
+        <div class="car-item">
+            <img src="https://images.unsplash.com/photo-1580273916550-ebdde4c50a43?q=80&w=2070" alt="Carro de Luxo 2">
+        </div>
+        <div class="car-item">
+            <img src="https://images.unsplash.com/photo-1549317661-9d5d42f42256?q=80&w=1974" alt="Carro de Luxo 3">
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2025 Luxury Cars. Todos os direitos reservados.</p>
+    </footer>
 </body>
 
 </html>
